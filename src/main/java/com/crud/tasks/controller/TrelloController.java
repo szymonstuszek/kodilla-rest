@@ -24,13 +24,8 @@ public class TrelloController {
     private TrelloClient trelloClient;
 
     @RequestMapping(method = RequestMethod.GET, value = "getTrelloBoards")
-    public void getTrelloBoards() {
-        Optional<List<TrelloBoardDto>> trelloBoards = trelloClient.getTrelloBoards();
-
-        if(trelloBoards.isPresent()) {
-            List<TrelloBoardDto> boardsToDisplay = trelloBoards.get();
-            displayBoardInfo(boardsToDisplay);
-        }
+    public List<TrelloBoardDto> getTrelloBoards() {
+        return trelloClient.getTrelloBoards();
     }
 
     private void displayBoardInfo(List<TrelloBoardDto> trelloBoards) {
