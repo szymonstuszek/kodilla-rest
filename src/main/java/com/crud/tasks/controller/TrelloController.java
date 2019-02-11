@@ -28,21 +28,6 @@ public class TrelloController {
         return trelloClient.getTrelloBoards();
     }
 
-    private void displayBoardInfo(List<TrelloBoardDto> trelloBoards) {
-        List<TrelloBoardDto> kodillaBoards = trelloBoards.stream()
-                .filter(board -> board.getId() != null && board.getName() != null)
-                .filter(board -> board.getName().contains("Kodilla"))
-                .collect(Collectors.toList());
-
-        kodillaBoards.forEach(board -> {
-            System.out.println(board.getName() + " - " + board.getId());
-            System.out.println("This board contains lists: ");
-
-            board.getLists().forEach(list ->
-                    System.out.println(list.getName() + " - " + list.getId() + " - " + list.isClosed()));
-        });
-    }
-
     @RequestMapping(method = RequestMethod.POST, value = "createTrelloCard")
     public CreatedTrelloCard createTrelloCard(@RequestBody TrelloCardDto trelloCardDto) {
         return trelloClient.createNewCard(trelloCardDto);

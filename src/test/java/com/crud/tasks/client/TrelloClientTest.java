@@ -66,7 +66,8 @@ public class TrelloClientTest {
         CreatedTrelloCard createdTrelloCard = new CreatedTrelloCard(
                 "1",
                 "Test task",
-                "http://test.com"
+                "http://test.com",
+                null
         );
 
         TrelloCardDto trelloCardDto = new TrelloCardDto(
