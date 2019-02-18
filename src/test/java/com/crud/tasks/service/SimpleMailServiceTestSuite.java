@@ -57,4 +57,50 @@ public class SimpleMailServiceTestSuite {
         //Then
         verify(javaMailSender, times(1)).send(mailMessage);
     }
+
+    @Test
+    public void shouldSendMailCcNull() {
+        //Given
+        Mail mail = new Mail("test@test.com", "test", "Test message", null);
+
+        SimpleMailMessage mailMessage = new SimpleMailMessage();
+        mailMessage.setTo(mail.getMailTo());
+        mailMessage.setSubject(mail.getSubject());
+        mailMessage.setText(mail.getMessage());
+        mailMessage.setCc(mail.getToCc());
+
+        //When
+        simpleMailService.send(mail);
+
+        //Then
+        verify(javaMailSender, times(1)).send(mailMessage);
+    }
+
+    @Test
+    public void checkSettingUpFields() {
+        SimpleMailMessage mailMessage = new SimpleMailMessage();
+        SimpleMailMessage mailMessage2 = new SimpleMailMessage();
+        SimpleMailMessage mailMessage3 = new SimpleMailMessage();
+        SimpleMailMessage blankMessage = new SimpleMailMessage();
+
+        String mailBody = "Sample text";
+        String emtpyBody = "";
+        String nullBody = null;
+
+        mailMessage.setText(mailBody);
+        mailMessage2.setText(emtpyBody);
+        mailMessage3.setText(nullBody);
+
+        System.out.println(mailMessage.getText());
+        System.out.println(mailMessage.getText().isEmpty());
+
+        System.out.println(mailMessage2.getText());
+        System.out.println(mailMessage2.getText().isEmpty());
+
+        System.out.println(blankMessage.getText());
+        System.out.println(blankMessage.getText() == null);
+
+        System.out.println(mailMessage3.getText());
+        System.out.println(mailMessage3.getText() == null);
+    }
 }
