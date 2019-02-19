@@ -41,8 +41,6 @@ public class TrelloClient {
             LOGGER.error(e.getMessage(), e);
             return new ArrayList<>();
         }
-
-
     }
 
     private URI buildTrelloUrl() {
