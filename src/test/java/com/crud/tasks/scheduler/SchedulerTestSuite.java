@@ -9,8 +9,10 @@ public class SchedulerTestSuite {
         //Given
         long count = 1;
 
-        String message = "Currently in the database you have: " + count + " tasks";
-        if(count == 1) message = message.substring(0, message.length() - 1);
+        String message = "Currently in the database you have: " + count + " task";
+        if(count == 0 || count > 1) {
+            message += "s";
+        }
 
         //When
 

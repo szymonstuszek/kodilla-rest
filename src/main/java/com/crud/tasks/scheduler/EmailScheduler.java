@@ -35,9 +35,11 @@ public class EmailScheduler {
     }
 
     private String getCountOfTasksMessage(long size) {
-        String message = "Currently in the database you have: " + size + " tasks";
+        String message = "Currently in the database you have: " + size + " task";
 
-        if(size == 1) message = message.substring(0, message.length() - 1);
+        if(size == 0 || size > 1) {
+            message += "s";
+        }
 
         return message;
     }
