@@ -15,6 +15,7 @@ public class TasksApplication {
 		SpringApplication.run(TasksApplication.class, args);
 	}
 
+//	for heroku
 //	@Override
 //	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
 //		return builder.sources(TasksApplication.class);
