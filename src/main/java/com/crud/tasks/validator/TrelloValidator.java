@@ -2,15 +2,9 @@ package com.crud.tasks.validator;
 
 import com.crud.tasks.domain.TrelloBoard;
 import com.crud.tasks.domain.TrelloCard;
-import com.crud.tasks.domain.dto.CreatedTrelloCardDto;
-import com.crud.tasks.domain.dto.TrelloBoardDto;
-import com.crud.tasks.domain.dto.TrelloCardDto;
-import com.crud.tasks.mapper.TrelloMapper;
-import com.crud.tasks.service.TrelloService;
 import com.crud.tasks.trello.facade.TrelloFacade;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
