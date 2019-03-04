@@ -17,8 +17,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 import static org.mockito.Matchers.anyList;
 import static org.mockito.Mockito.when;
 
@@ -99,7 +98,7 @@ public class TrelloFacadeTestSuite {
             trelloBoardDto.getLists().forEach(trelloListDto -> {
                 assertEquals("1", trelloListDto.getId());
                 assertEquals("Test List", trelloListDto.getName());
-                assertEquals(false, trelloListDto.isClosed());
+                assertFalse(trelloListDto.isClosed());
             });
         });
     }

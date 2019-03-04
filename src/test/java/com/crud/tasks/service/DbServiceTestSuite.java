@@ -78,10 +78,3 @@ public class DbServiceTestSuite {
         assertThat(taskList.size(), greaterThan(0));
     }
 }
-//    public List<Task> getAllTasks() {
-//        return repository.findAll();
-//    }
-//
-//    public void removeTask(final Long id) {
-//        repository.removeById(id);
-//    }

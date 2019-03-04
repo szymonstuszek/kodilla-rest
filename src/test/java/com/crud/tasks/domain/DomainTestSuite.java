@@ -33,7 +33,5 @@ public class DomainTestSuite {
         assertNotNull(attachments.getTrello());
         assertNotNull(emptyTrello);
         assertNotNull(emptyBadges);
-
-
     }
 }
