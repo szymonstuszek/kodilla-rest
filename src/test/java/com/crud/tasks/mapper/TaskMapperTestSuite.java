@@ -33,7 +33,6 @@ public class TaskMapperTestSuite {
         assertEquals(1L, (long) task.getId());
         assertEquals("Test task title", task.getTitle());
         assertEquals("My newest task", task.getContent());
-        assertEquals(Task.class, task.getClass());
     }
 
     @Test
@@ -45,10 +44,9 @@ public class TaskMapperTestSuite {
         TaskDto taskDto = taskMapper.mapToTaskDto(task);
 
         //Then
-        assertEquals(1L, (long) task.getId());
-        assertEquals("Test task title", task.getTitle());
-        assertEquals("My newest task", task.getContent());
-        assertEquals(TaskDto.class, taskDto.getClass());
+        assertEquals(1L, (long) taskDto.getId());
+        assertEquals("Test task title", taskDto.getTitle());
+        assertEquals("My newest task", taskDto.getContent());
     }
 
     @Test
@@ -70,7 +68,6 @@ public class TaskMapperTestSuite {
         assertEquals(1L, (long) taskDtoList.get(0).getId());
         assertEquals("Test task title1", taskDtoList.get(0).getTitle());
         assertEquals("My newest task1", taskDtoList.get(0).getContent());
-        assertEquals(TaskDto.class, taskDtoList.get(0).getClass());
         assertEquals(3, taskDtoList.size());
     }
 }
