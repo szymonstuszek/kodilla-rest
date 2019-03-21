@@ -34,7 +34,7 @@ public class SimpleMailServiceTestSuite {
         mailMessage.setCc(mail.getToCc());
 
         //When
-        simpleMailService.send(mail);
+        simpleMailService.sendCardCreatedMessage(mail);
 
         //Then
         verify(javaMailSender, times(1)).send(mailMessage);
@@ -52,7 +52,7 @@ public class SimpleMailServiceTestSuite {
         mailMessage.setCc(mail.getToCc());
 
         //When
-        simpleMailService.send(mail);
+        simpleMailService.sendCardCreatedMessage(mail);
 
         //Then
         verify(javaMailSender, times(1)).send(mailMessage);
@@ -70,7 +70,7 @@ public class SimpleMailServiceTestSuite {
         mailMessage.setCc(mail.getToCc());
 
         //When
-        simpleMailService.send(mail);
+        simpleMailService.sendCardCreatedMessage(mail);
 
         //Then
         verify(javaMailSender, times(1)).send(mailMessage);
