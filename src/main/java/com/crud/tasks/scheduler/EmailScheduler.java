@@ -21,13 +21,13 @@ public class EmailScheduler {
     @Autowired
     private AdminConfig adminConfig;
 
-    @Scheduled(cron = "0 0 10 * * *")
+//    @Scheduled(cron = "*/10 * * * * *")
 //    @Scheduled(fixedDelay = 10000)
     public void sendInformationMail() {
         long size = taskRepository.count();
         String message = getCountOfTasksMessage(size);
 
-        simpleMailService.send(new Mail(
+        simpleMailService.sendReminder(new Mail(
                 adminConfig.getAdminMail(),
                 SUBJECT,
                 message
